@@ -1,0 +1,23 @@
+name: Run todo_list on self-hosted runner
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: self-hosted
+    steps:
+      - name: Pull latest into githubActions2/todo_list
+        shell: cmd
+        working-directory: C:\Users\super\Desktop\todo\githubActions2\todo_list
+        run: |
+          git fetch origin
+          git reset --hard origin/main
+
+      - name: Run docker compose in a new terminal window
+        shell: cmd
+        working-directory: C:\Users\super\Desktop\todo\githubActions2\todo_list
+        run: start "todo_list" cmd /k "echo Site: http://localhost:8000 && docker compose up --build"
