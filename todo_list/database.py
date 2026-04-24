@@ -16,4 +16,3 @@ def get_db():
         db.close()
  
 ##dfsfdsf
-#cd
