@@ -19,5 +19,5 @@ jobs:
 
       - name: Run docker compose in a new terminal window
         shell: cmd
-        working-directory: C:\Users\super\Desktop\todo\githubActions2\todo_list
+        working-directory: C:\Users\super\Desktop\todo\githubActions2\todo_list\todo_list
         run: start "todo_list" cmd /k "echo Site: http://localhost:8000 && docker compose up --build"
